@@ -59,11 +59,6 @@ const Header = () => {
                   }`}
                 >
                   {item.name}
-                  {/* <span
-                    className={`${
-                      item.ref === activeSection ? "w-full" : "w-0"
-                    } block h-1 bg-[var(--blue50-color)] absolute bottom-[-2px] left-0 transition-all duration-300 group-hover:w-full`}
-                  ></span> */}
                 </Link>
               </li>
             ))}
@@ -74,7 +69,7 @@ const Header = () => {
           width={59}
           height={52}
           onClick={() => setIsOpenMenu(!isOpenMenu)}
-          className="xl:hidden cursor-pointer text-[var(--white-color)] hover:text-[var(--blue50-color)] transition-all"
+          className="xl:hidden cursor-pointer text-[var(--white-color)] hover:text-[var(--blue250-color)] transition-all"
         />
       </div>
       {isOpenMenu && <BurgerMenu handleOpenMenu={() => setIsOpenMenu(false)} />}

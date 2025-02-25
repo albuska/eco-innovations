@@ -13,7 +13,7 @@ interface IBurger {
 
 const BurgerMenu: FC<IBurger> = ({ handleOpenMenu }) => {
   const [, setIsScrolled] = useState<boolean>(false);
-  const [activeSection, setActiveSection] = useState<string | null>(null);
+  const [, setActiveSection] = useState<string | null>(null);
 
   const handleScroll = () => {
     if (window.scrollY > 50) {
@@ -67,15 +67,10 @@ const BurgerMenu: FC<IBurger> = ({ handleOpenMenu }) => {
                 prefetch
                 href={item.ref}
                 aria-label={item.name}
-                className="text-[var(--blue50-color)] text-xl leading-[24px] sm:text-2xl sm:leading-[29.26px] transition-all group-hover:text-shadow-blue"
+                className="text-[var(--blue250-color)] text-xl leading-[24px] sm:text-2xl sm:leading-[29.26px] transition-all group-hover:text-shadow-blue"
               >
                 {item.name}
               </Link>
-              <span
-                className={`${
-                  item.ref === activeSection ? "w-full" : "w-0"
-                } block h-[1px] bg-[var(--blue50-color)] absolute bottom-[-2px] left-0 transition-all duration-300 group-hover:w-full`}
-              ></span>
             </li>
           ))}
         </ul>

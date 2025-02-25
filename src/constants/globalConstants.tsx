@@ -5,6 +5,7 @@ import {
   IOurServicesList,
   IComprehensiveSolutionsList,
   IBenefitsOfCooperationList,
+  IPermitProcessingList,
 } from "@/types";
 import chart_icon from "../../public/images/chart_icon.webp";
 import lightning_icon from "../../public/images/lightning_icon.webp";
@@ -22,6 +23,10 @@ import ourServices_img2 from "../../public/images/our_services_img_2.webp";
 import ourServices_img3 from "../../public/images/our_services_img_3.webp";
 import ourServices_img3_tablet from "../../public/images/our_services_img_3_tablet.webp";
 import flag_icon from "../../public/images/flag_icon.webp";
+import { IWhatDoWeOfferList } from "@/types/types";
+import check_icon from "../../public/images/check_icon.webp";
+import plug_icon from "../../public/images/plug_icon.webp";
+import scales_icon from "../../public/images/scales_icon.webp";
 
 export const headerNavList: IHeaderNavList[] = [
   {
@@ -184,7 +189,7 @@ export const benefitsOfCooperationList: IBenefitsOfCooperationList[] = [
   },
   {
     id: 1,
-    text: "Безперешкодна робота вашої компанії",
+    text: "Отримання прибутку від продажу електроенергії",
   },
 ];
 
@@ -200,5 +205,138 @@ export const analysisAndStrategyList: IBenefitsOfCooperationList[] = [
   {
     id: 2,
     text: "Допоможуть вам стати успішним гравцем енергоринку України",
+  },
+];
+
+export const permitProcessingList: IPermitProcessingList[] = [
+  {
+    id: 0,
+    title: "Юридичний аудит в енергетиці",
+    icon: "icon-search",
+    widthIcon: 35,
+    heightIcon: 39,
+  },
+  {
+    id: 1,
+    title: (
+      <>
+        Комплексна перевірка відповідності{" "}
+        <span className="font-normal">
+          вашого підприємства чинним законодавчим вимогам.
+        </span>
+      </>
+    ),
+    icon: "icon-export_notes",
+    widthIcon: 37,
+    heightIcon: 37,
+  },
+  {
+    id: 2,
+    title: (
+      <>
+        Підготовка та оформлення документації <br />
+        <span className="font-normal">
+          для отримання дозволів на генерацію електроенергії.
+        </span>
+      </>
+    ),
+    icon: "icon-edit_document",
+    widthIcon: 35,
+    heightIcon: 37,
+  },
+  {
+    id: 3,
+    title:
+      "Консультації з нормативних актів та стандартів ринку електроенергії.",
+    icon: "icon-folder_check",
+    widthIcon: 37,
+    heightIcon: 29,
+  },
+  {
+    id: 4,
+    title: "Підтримка при проходженні перевірок контролюючих органів.",
+    icon: "icon-task",
+    widthIcon: 29,
+    heightIcon: 37,
+  },
+  {
+    id: 5,
+    title: (
+      <>
+        Результат: <br />
+        <span className="font-normal">
+          Ви отримуєте юридично чисту модель ведення бізнесу, що дозволяє вам
+          працювати без ризиків та штрафів.
+        </span>
+      </>
+    ),
+    icon: "icon-check",
+    widthIcon: 30,
+    heightIcon: 22,
+  },
+];
+
+export const whatDoWeOfferList: IWhatDoWeOfferList[] = [
+  {
+    id: 0,
+    subtitle: (
+      <>
+        <span className="font-extrabold">Оформлення статусу</span>{" "}
+        &quot;Активний споживач&quot; – юридичний супровід процедури.
+      </>
+    ),
+    image: paper_icon,
+  },
+  {
+    id: 1,
+    subtitle: (
+      <>
+        <span className="font-extrabold">
+          Розробка стратегії продажу електроенергії
+        </span>{" "}
+        та консультації щодо тарифів.
+      </>
+    ),
+    image: chart_icon,
+  },
+  {
+    id: 2,
+    subtitle: (
+      <>
+        <span className="font-extrabold">Допомога в укладенні договорів</span>{" "}
+        <br /> з енергопостачальниками та трейдерами.
+      </>
+    ),
+    image: plug_icon,
+  },
+  {
+    id: 3,
+    subtitle: (
+      <>
+        <span className="font-extrabold">Юридичний супровід угод</span> для
+        безпечного виходу на ринок електроенергії.
+      </>
+    ),
+    image: scales_icon,
+  },
+  {
+    id: 4,
+    subtitle: (
+      <>
+        <span className="font-extrabold">
+          Оптимізація податкового навантаження
+        </span>{" "}
+        <br />
+        та відповідність регуляторним вимогам.
+      </>
+    ),
+    image: bag_icon,
+  },
+  {
+    id: 5,
+    title: "Результат",
+    subtitle:
+      "Ваше підприємство отримує додатковий дохід від продажу надлишкової електроенергії, працюючи законно, безпечно та ефективно!",
+    image: check_icon,
   },
 ];

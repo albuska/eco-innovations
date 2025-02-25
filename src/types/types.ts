@@ -39,3 +39,18 @@ export interface IBenefitsOfCooperationList {
   id: number;
   text: string;
 }
+
+export interface IPermitProcessingList {
+  id: number;
+  title: JSX.Element | string;
+  icon: string;
+  widthIcon?: number;
+  heightIcon?: number;
+}
+
+export interface IWhatDoWeOfferList {
+  id: number;
+  title?: string;
+  subtitle: JSX.Element | string;
+  image: StaticImageData;
+}

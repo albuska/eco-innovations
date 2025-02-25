@@ -1,0 +1,8 @@
+.legal_support_for_energy_sector_container {
+    background-size: 100% 100%;
+}
+
+.container_inside {
+    background-color: rgba(5, 109, 138, 0.5);
+    backdrop-filter: blur(12px);
+}

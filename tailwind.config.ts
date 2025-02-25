@@ -31,6 +31,14 @@ export default {
           "url('/images/getCommercialOffer-bg-img_desktop.webp')",
         "get-commercial-offer-desktop-maxi":
           "url('/images/getCommercialOffer-bg-img_desktop-maxi.webp')",
+        "legal-support-for-energy-sector-mobile":
+          "url('/images/LegalSupportForEnergySector_img_mobile.webp')",
+        "legal-support-for-energy-sector-tablet":
+          "url('/images/LegalSupportForEnergySector_img_tablet.webp')",
+        "legal-support-for-energy-sector-desktop":
+          "url('/images/LegalSupportForEnergySector_img_desktop.webp')",
+        "legal-support-for-energy-sector-desktop-maxi":
+          "url('/images/LegalSupportForEnergySector_img_desktop_maxi.webp')",
       },
     },
   },

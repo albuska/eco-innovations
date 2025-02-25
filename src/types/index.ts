@@ -5,4 +5,5 @@ export type {
   IOurServicesList,
   IComprehensiveSolutionsList,
   IBenefitsOfCooperationList,
+  IPermitProcessingList,
 } from "./types";

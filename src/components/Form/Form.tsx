@@ -65,7 +65,7 @@ const Form = () => {
         />
         <button
           type="submit"
-          className="flex items-center sm:absolute sm:top-[50%] sm:right-0 sm:translate-y-[-50%] justify-center w-[278px] min-w-[278px] h-[56px]  sm:h-[62px] rounded-[100px] bg-[var(--blue50-color)] text-[var(--white-color)] text-lg leading-[21.94px] font-semibold transition-all cursor-pointer hover:enabled:text-[var(--blue00-color)] hover:enabled:bg-[var(--white-color)] border-[3px] border-solid border-[transparent] hover:enabled:border-[var(--blue00-color)] disabled:bg-[var(--gray100-color)] disabled:text-[--gray300-color]"
+          className="flex items-center sm:absolute sm:top-[50%] sm:right-0 sm:translate-y-[-50%] justify-center w-[278px] min-w-[278px] h-[56px]  sm:h-[62px] rounded-[100px] bg-[var(--blue250-color)] text-[var(--white-color)] text-lg leading-[21.94px] font-semibold transition-all cursor-pointer hover:enabled:text-[var(--blue00-color)] hover:enabled:bg-[var(--white-color)] border-[3px] border-solid border-[transparent] hover:enabled:border-[var(--blue00-color)] disabled:bg-[var(--gray100-color)] disabled:text-[--gray300-color]"
           disabled={!isValid || isSubmitting}
         >
           {isSubmitting ? "Submitting..." : "Отримати пропозицію"}
