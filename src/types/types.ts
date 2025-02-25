@@ -1,0 +1,41 @@
+import { StaticImageData } from "next/image";
+import { JSX } from "react";
+
+export interface IHeaderNavList {
+  id: number;
+  name: string;
+  value: string;
+  ref: string;
+}
+
+export interface IWhyIsThisBeneficial {
+  id: number;
+  title: string | JSX.Element;
+  text: string;
+  icon: StaticImageData;
+}
+
+export interface IWhatWeProvideList {
+  id: number;
+  title: string;
+  icon: StaticImageData;
+}
+
+export interface IOurServicesList {
+  id: number;
+  title: string;
+  text: string;
+  image: StaticImageData;
+  imageTablet?: StaticImageData;
+}
+
+export interface IComprehensiveSolutionsList {
+  id: number;
+  title: string;
+  icon: StaticImageData;
+}
+
+export interface IBenefitsOfCooperationList {
+  id: number;
+  text: string;
+}
