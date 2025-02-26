@@ -54,3 +54,23 @@ export interface IWhatDoWeOfferList {
   subtitle: JSX.Element | string;
   image: StaticImageData;
 }
+
+export interface INetworkList {
+  id: number;
+  title?: string;
+  icon: string;
+  link: string;
+}
+
+export interface IContactsList {
+  id: number;
+  title: string;
+  icon: string;
+  link: string;
+}
+
+export interface INetworkListTwo {
+  id: number;
+  image: StaticImageData;
+  link: string;
+}

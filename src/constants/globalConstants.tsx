@@ -6,6 +6,10 @@ import {
   IComprehensiveSolutionsList,
   IBenefitsOfCooperationList,
   IPermitProcessingList,
+  IWhatDoWeOfferList,
+  INetworkList,
+  IContactsList,
+  INetworkListTwo,
 } from "@/types";
 import chart_icon from "../../public/images/chart_icon.webp";
 import lightning_icon from "../../public/images/lightning_icon.webp";
@@ -23,10 +27,12 @@ import ourServices_img2 from "../../public/images/our_services_img_2.webp";
 import ourServices_img3 from "../../public/images/our_services_img_3.webp";
 import ourServices_img3_tablet from "../../public/images/our_services_img_3_tablet.webp";
 import flag_icon from "../../public/images/flag_icon.webp";
-import { IWhatDoWeOfferList } from "@/types/types";
 import check_icon from "../../public/images/check_icon.webp";
 import plug_icon from "../../public/images/plug_icon.webp";
 import scales_icon from "../../public/images/scales_icon.webp";
+import whatsapp_icon from "../../public/images/whatsapp.webp";
+import viber_icon from "../../public/images/viber.webp";
+import telegram_icon from "../../public/images/telegram.webp";
 
 export const headerNavList: IHeaderNavList[] = [
   {
@@ -338,5 +344,71 @@ export const whatDoWeOfferList: IWhatDoWeOfferList[] = [
     subtitle:
       "Ваше підприємство отримує додатковий дохід від продажу надлишкової електроенергії, працюючи законно, безпечно та ефективно!",
     image: check_icon,
+  },
+];
+
+export const networkList: INetworkList[] = [
+  {
+    id: 0,
+    title: "Facebook",
+    icon: "icon-facebook",
+    link: "https://www.facebook.com/people/%D0%95%D0%BA%D0%BE-%D0%A1%D1%84%D0%B5%D1%80%D0%B0-%D0%9D%D0%BE%D0%B2%D0%B0%D1%86%D1%96%D0%B9/61559461587933/",
+  },
+  {
+    id: 1,
+    title: "Instagram",
+    icon: "icon-instagram",
+    link: "https://www.instagram.com/eco_sphere_innovations/",
+  },
+  {
+    id: 2,
+    title: "Linkedin",
+    icon: "icon-linkedin",
+    link: "https://www.linkedin.com/company/eco-sphere-innovations/",
+  },
+  {
+    id: 3,
+    title: "Tik tok",
+    icon: "icon-tikTok",
+    link: "https://www.tiktok.com/@esi_ekosferanovation",
+  },
+];
+
+export const contactsList: IContactsList[] = [
+  {
+    id: 0,
+    title: "м. Ірпінь вул. Соборна, 143",
+    icon: "icon-address",
+    link: "https://maps.app.goo.gl/1fgdiw6q58XbLxkV6",
+  },
+  {
+    id: 1,
+    title: "+38 098 835 99 51",
+    icon: "icon-phone",
+    link: "tel:+380988359951",
+  },
+  {
+    id: 2,
+    title: "info@e-si.energy",
+    icon: "icon-email",
+    link: "mailto:info@e-si.energy",
+  },
+];
+
+export const networksListTwo: INetworkListTwo[] = [
+  {
+    id: 0,
+    image: whatsapp_icon,
+    link: "https://api.whatsapp.com/send/?phone=380988359951&text&type=phone_number&app_absent=0",
+  },
+  {
+    id: 1,
+    image: viber_icon,
+    link: "viber://chat?number=380988359951",
+  },
+  {
+    id: 2,
+    image: telegram_icon,
+    link: "https://t.me/+380988359951",
   },
 ];

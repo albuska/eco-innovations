@@ -53,7 +53,7 @@ const PermitProcessing = () => {
           <Image src={imgTwo} alt="Permit processing image two" layout="fill" />
         </div>
         <div className="relative flex flex-col">
-          <div className="absolute top-[28%] left-[-11%] sm:left-[-6%] sm:top-[32%] w-[72px] h-[52px] scale-x-[-1] lg:hidden">
+          <div className="z-[2] absolute top-[28%] left-[-11%] sm:left-[-6%] sm:top-[32%] w-[72px] h-[52px] scale-x-[-1] lg:hidden">
             <Image src={leaf} alt="Leaf" layout="fill" />
           </div>
           <ul className="flex flex-col gap-[10px] mx-auto z-[1]">

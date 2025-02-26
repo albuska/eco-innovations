@@ -7,8 +7,8 @@ const WhatDoWeOffer = () => {
       <h2 className="w-[336px] sm:w-auto mx-auto font-extrabold text-[var(--black-color)] mb-[32px] text-[28px] sm:text-[32px] leading-[34.13px] sm:leading-[39.01px] tracking-[-0.02em] xl:text-[42px] xl:leading-[51.2px] text-center">
         💡 Що ми пропонуємо?
       </h2>
-      <ul className="px-[28px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-[24px] mt-[32px]">
-        {whatDoWeOfferList.map((item, index) => (
+      <ul className="px-[28px] sm:px-[39px] lg:px-[35px] xl:px-0 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-[24px] sm:gap-[32px] mt-[32px] max-w-[1140px] mx-auto">
+        {whatDoWeOfferList.map((item) => (
           <li
             key={item.id}
             className={`flex flex-col items-center gap-[20px] ${
@@ -17,13 +17,8 @@ const WhatDoWeOffer = () => {
                 : "bg-[var(--blue05-color)]"
             } 
                   rounded-[12px] border border-solid border-[var(--blue200-color)] 
-                  px-[13px] py-[32px] text-center
-                  
-                  ${index < 3 ? "lg:col-span-2" : "lg:col-span-3"}  
-                  ${index < 2 ? "sm:col-span-1" : ""} 
-                  ${index >= 2 && index < 4 ? "sm:col-span-1" : ""}  
-                  ${index === 4 ? "sm:col-span-2" : ""}  
-                  ${index >= 3 ? "lg:col-span-3" : ""}`}
+                  px-[13px] sm:px-[7px] lg:px-[4px] xl:px-[32px] py-[32px] text-center lg:max-w-[300px] xl:max-w-[359px]
+                  `}
           >
             <div className="relative w-[70px] h-[70px] shrink-0">
               <Image

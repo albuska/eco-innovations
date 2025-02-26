@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Icons } from "@/components/Icons";
+import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: "Eco Innovations",
@@ -19,6 +20,7 @@ export default function RootLayout({
         <Icons />
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );

@@ -6,4 +6,8 @@ export type {
   IComprehensiveSolutionsList,
   IBenefitsOfCooperationList,
   IPermitProcessingList,
+  INetworkList,
+  IWhatDoWeOfferList,
+  IContactsList,
+  INetworkListTwo,
 } from "./types";
