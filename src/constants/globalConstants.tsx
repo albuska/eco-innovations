@@ -39,13 +39,13 @@ export const headerNavList: IHeaderNavList[] = [
     id: 0,
     name: "Юридичне супроводження в електроенергетиці",
     value: "legalSupport",
-    ref: "#legalSupport",
+    ref: "#support",
   },
   {
     id: 1,
     name: "Отримання статусів “Активний споживач електроенергії”/ “Виробник електроенергії”",
     value: "gettingStatuses",
-    ref: "#gettingStatuses",
+    ref: "#status",
   },
   {
     id: 2,

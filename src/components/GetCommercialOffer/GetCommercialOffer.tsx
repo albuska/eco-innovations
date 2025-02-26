@@ -13,14 +13,17 @@ const Form = dynamic(() => import("../Form/Form"), {
 interface IGetCommercialOffer {
   type?: "base" | "second";
   subtitle?: string | React.ReactNode;
+  id?: string;
 }
 
 const GetCommercialOffer: FC<IGetCommercialOffer> = ({
   type = "base",
   subtitle,
+  id,
 }) => {
   return (
     <section
+      id={id ? id : "support"}
       className={`${
         type === "second"
           ? `${style.get_commercial_offer_container} bg-get-commercial-offer-mobile sm:bg-get-commercial-offer-tablet lg:bg-get-commercial-offer-desktop xl:bg-get-commercial-offer-desktop-maxi bg-center bg-no-repeat`

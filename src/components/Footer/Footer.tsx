@@ -10,7 +10,7 @@ import { Icon } from "../Icon";
 
 const Footer = () => {
   return (
-    <footer className="pt-[34px] pb-[71px]">
+    <footer id="contacts" className="pt-[34px] pb-[71px]">
       <div className="flex flex-col pl-[36px] sm:pr-[36px] sm:flex-row sm:justify-between max-w-[1050px] mx-auto xl:px-0">
         <div className="flex flex-col gap-[11px] mb-[25px] sm:mb-0">
           <Link

@@ -25,6 +25,7 @@ export default function Home() {
       <ComprehensiveSolutions />
       <GetCommercialOffer
         type="second"
+        id="status"
         subtitle=<>
           “Статус “Активний споживач електроенергії/ <br /> “Виробник
           електроенергії”
@@ -32,7 +33,7 @@ export default function Home() {
       />
       <PermitProcessing />
       <LegalSupportForEnergySector />
-      <WhatDoWeOffer/>
+      <WhatDoWeOffer />
       <GetCommercialOffer
         subtitle=<>
           “Статус “Активний споживач електроенергії/ <br /> “Виробник
