@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import { headerNavList } from "@/constants/globalConstants";
 import { Icon } from "../Icon";
-import logo from "../../../public/images/logo.png";
+import logo from "../../../public/images/logo.webp";
 import { BurgerMenu } from "../BurgerMenu";
 
 const Header = () => {

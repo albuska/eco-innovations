@@ -5,7 +5,7 @@ import Link from "next/link";
 import { FC, useEffect, useState } from "react";
 import { Icon } from "../Icon";
 import { headerNavList } from "@/constants/globalConstants";
-import logo from "../../../public/images/logo-burger.png";
+import logo from "../../../public/images/logo-burger.webp";
 
 interface IBurger {
   handleOpenMenu: () => void;

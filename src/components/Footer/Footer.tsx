@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "../../../public/images/logo-burger.png";
+import logo from "../../../public/images/logo-burger.webp";
 import {
   contactsList,
   networkList,
