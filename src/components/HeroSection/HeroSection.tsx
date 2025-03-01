@@ -1,16 +1,55 @@
+"use client";
+
+import { useRef } from "react";
+// import ReactPlayer from "react-player/lazy";
 import style from "./style.module.css";
+import { Video } from "../Video";
 
 const HeroSection = () => {
+  const playerRef = useRef(null);
+  // const [isPlaying, setIsPlaying] = useState(true);
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (!playerRef.current) return;
+
+  //     const rect = playerRef.current.getBoundingClientRect();
+  //     const isVisible = rect.top >= 0 && rect.bottom <= window.innerHeight;
+
+  //     setIsPlaying(isVisible);
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll);
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, []);
+
   return (
-    <section
-      className={`bg-[var(--black-color)] px-7 sm:px-10 bg-hero-mobile sm:bg-hero-tablet lg:bg-hero-desktop xl:bg-hero-desktop-maxi bg-center bg-no-repeat ${style.hero_container}`}
-    >
-      <h1 className="text-3xl leading-[36.57px] sm:text-[40px] text-center text-[var(--white-color)] sm:leading-[48.76px] xl:text-[45px] xl:leading-[54.86px] font-extrabold pt-[239px] pb-[239px] max-w-[740px] mx-auto">
-        Послуги для підприємств, що генерують власну{" "}
-        <span className="text-[var(--blue200-color)]">
-          електроенергію завдяки сонячним електростанціям
-        </span>
-      </h1>
+    <section ref={playerRef} className={style.hero_container}>
+      <Video src="videos/hero-video.mp4" />
+      {/* <div className={style.video_wrapper}>
+        <ReactPlayer
+          url="https://www.youtube.com/watch?v=6r5j0aT8ke0"
+          playing={isPlaying}
+          muted
+          loop
+          width="100vw"
+          height="100vh"
+          controls={false}
+          config={{
+            youtube: {
+              playerVars: {
+                modestbranding: 1,
+                rel: 0,
+                showinfo: 0,
+                disablekb: 1,
+                iv_load_policy: 3,
+                playlist: "6r5j0aT8ke0", // Додаємо ID відео в плейлист
+              },
+            },
+          }}
+          // style={{ position: "absolute", top: 0, left: 0, objectFit: "cover" }}
+        />
+      </div> */}
     </section>
   );
 };

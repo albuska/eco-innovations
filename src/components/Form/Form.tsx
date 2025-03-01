@@ -1,12 +1,44 @@
-import { useForm } from "react-hook-form";
+import { Controller, useForm } from "react-hook-form";
+import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
+import axios from "axios";
+import ReactGA from "react-ga4";
+import { useRouter } from "next/navigation";
+import PhoneInput from "react-phone-input-2";
+import { isValidPhoneNumber } from "react-phone-number-input";
+import "react-phone-input-2/lib/style.css";
+import { getQuery } from "@/utils/getQuery";
 
 import { schema } from "@/constants/validate";
 import { IFormInputs } from "@/models";
 import { Input } from "../Input";
 import { Agreement } from "../Agreement";
+import { sendEventToConversionApi } from "@/utils/sendEventsToConversionApi";
+import { useModals } from "@/context/ModalsProvider";
+
+declare global {
+  interface Window {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    fbq: (...args: any[]) => void;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    gtag: (...args: any[]) => void;
+  }
+}
+
+let SERVER_URL = "";
+if (process.env.NODE_ENV === "production") {
+  SERVER_URL = process.env.NEXT_PUBLIC_PROD_SERVER_URL!;
+}
+if (process.env.NODE_ENV === "development") {
+  SERVER_URL = process.env.NEXT_PUBLIC_DEV_SERVER_URL!;
+}
 
 const Form = () => {
+  const [serverError, setServerError] = useState<string | null>(null);
+  const router = useRouter();
+  const [regionCode] = useState<string>("");
+  const context = useModals();
+
   const {
     handleSubmit,
     formState: { errors, isValid, isSubmitting },
@@ -17,18 +49,55 @@ const Form = () => {
     resolver: yupResolver(schema),
     defaultValues: {
       name: "",
-      formOfOwnership: "",
-      phoneNumber: "",
+      ownership: "",
+      phone: "",
     },
   });
 
+  // useEffect(() => {
+  //   if (context?.region) {
+  //     setRegionCode(context.region.toLowerCase());
+  //   } else {
+  //     setRegionCode("us");
+  //   }
+  // }, [context?.region]);
+
+  console.log(regionCode, "regionCode");
+  console.log(context.region, "context.region");
+
+  // useEffect(() => {
+  //   context?.region
+  //     ? setRegionCode(context?.region.toLowerCase())
+  //     : setRegionCode("us");
+  // }, [context.region]);
+
   const onSubmit = async (values: IFormInputs) => {
-    try {
-      console.log(values);
-      reset();
-    } catch (error) {
-      console.log(error);
-    }
+    console.log(values, "values");
+    const sendData = {
+      query: getQuery(),
+      ...values,
+    };
+    setServerError(null);
+    axios
+      .post(SERVER_URL, sendData)
+      .then(() => {
+        reset();
+        window.fbq("track", "Lead");
+        ReactGA.event("generate_lead", {
+          category: "form",
+          action: "submit",
+        });
+        sendEventToConversionApi("Lead");
+        window.gtag("event", "conversion", {
+          send_to: "AW-16550313161/fs3wCMnm2dEZEMn55tM9",
+        });
+        router.push("/thanks");
+      })
+      .catch(() => {
+        setServerError(
+          "Сервіс тимчасово не працює. Спробуйте будь-ласка пізніше"
+        );
+      });
   };
 
   return (
@@ -38,8 +107,8 @@ const Form = () => {
     >
       <Input
         control={control}
-        name="formOfOwnership"
-        error={errors.formOfOwnership?.message}
+        name="ownership"
+        error={errors.ownership?.message}
         placeholder="Форма власності підприємства"
         rules={{ required: "Form of ownership is required" }}
       />
@@ -50,12 +119,60 @@ const Form = () => {
         placeholder="Ім’я співробітника підприємства"
         rules={{ required: "Name is required" }}
       />
-      <Input
+      <Controller
+        name="phone"
         control={control}
-        name="phoneNumber"
-        error={errors.phoneNumber?.message}
-        placeholder="Телефон представника підприємства"
-        rules={{ required: "PhoneNumber is required" }}
+        render={({ field: { onChange, value } }) => (
+          <div className="relative w-full">
+            <PhoneInput
+              inputStyle={{
+                // height: "55px",
+                height: "70px",
+                width: "100%",
+                boxSizing: "border-box",
+                borderRadius: "100px",
+                borderWidth: "2px",
+                borderStyle: "solid",
+                borderColor: errors.phone ? "#DF2A2A" : "#fff",
+                color: "#757575",
+                fontSize: "18px",
+                fontStyle: "normal",
+                fontWeight: "400",
+                lineHeight: "21.94px",
+                padding: "0 25px",
+                backgroundColor: "#FFFFFF80",
+                outline: "0",
+                fontFamily: "Montserrat",
+              }}
+              buttonStyle={{
+                boxSizing: "border-box",
+                borderColor: errors.phone ? "#DF2A2A" : "#fff",
+                borderWidth: "2px",
+                borderStyle: "solid",
+                fontFamily: "Montserrat",
+                padding: "0 25px",
+                // height: "55px",
+                height: "70px",
+              }}
+              country={regionCode}
+              enableSearch
+              excludeCountries={["ru"]}
+              value={value}
+              onChange={onChange}
+            />
+            {errors.phone && (
+              <p className="absolute text-[var(--error-color)] font-medium left-[7%] bottom-[-12px] sm:bottom-[-16px] sm:left-[7%] text-xs leading-[14.63px]">
+                <span className="text-[var(--error-color)]">*</span>
+                {errors.phone.message}
+              </p>
+            )}
+            {!errors.phone && value && !isValidPhoneNumber(`+${value}`) && (
+              <p className="absolute text-[var(--error-color)] left-0 bottom-[-18px] text-[12px] font-manrope">
+                Invalid phone number
+              </p>
+            )}
+          </div>
+        )}
       />
       <div className="flex flex-col sm:relative gap-[10px] sm:gap-0 sm:flex-row items-center">
         <Agreement
@@ -70,6 +187,12 @@ const Form = () => {
         >
           {isSubmitting ? "Submitting..." : "Отримати пропозицію"}
         </button>
+        {serverError && (
+          <p className="text-[var(--error-color)] font-medium mt-[10px] text-xs leading-[14.63px]">
+            <span className="text-[var(--error-color)]">*</span>
+            {serverError}
+          </p>
+        )}
       </div>
     </form>
   );

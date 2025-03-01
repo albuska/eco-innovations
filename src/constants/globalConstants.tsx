@@ -10,6 +10,7 @@ import {
   INetworkList,
   IContactsList,
   INetworkListTwo,
+  ILegalSupportList,
 } from "@/types";
 import chart_icon from "../../public/images/chart_icon.webp";
 import lightning_icon from "../../public/images/lightning_icon.webp";
@@ -17,18 +18,17 @@ import additional_profit_icon from "../../public/images/additional_profit_icon.w
 import dandruff_icon from "../../public/images/dandruff_icon.webp";
 import paper_icon from "../../public/images/paper_icon.webp";
 import cup_icon from "../../public/images/cup_icon.webp";
+import sun_icon from "../../public/images/sun_icon.webp";
 import lawyer_icon from "../../public/images/lawyer_icon.webp";
 import bag_icon from "../../public/images/bag_icon.webp";
 import message_icon from "../../public/images/message_icon.webp";
 import hands_icon from "../../public/images/hands_icon.webp";
-import file_icon from "../../public/images/file_icon.webp";
 import ourServices_img1 from "../../public/images/our_services_img.webp";
 import ourServices_img2 from "../../public/images/our_services_img_2.webp";
 import ourServices_img3 from "../../public/images/our_services_img_3.webp";
 import ourServices_img3_tablet from "../../public/images/our_services_img_3_tablet.webp";
 import flag_icon from "../../public/images/flag_icon.webp";
 import check_icon from "../../public/images/check_icon.webp";
-import plug_icon from "../../public/images/plug_icon.webp";
 import scales_icon from "../../public/images/scales_icon.webp";
 import whatsapp_icon from "../../public/images/whatsapp.webp";
 import viber_icon from "../../public/images/viber.webp";
@@ -52,6 +52,26 @@ export const headerNavList: IHeaderNavList[] = [
     name: "Контакти",
     value: "contacts",
     ref: "#contacts",
+  },
+];
+
+export const legalSupportList: ILegalSupportList[] = [
+  {
+    id: 0,
+    title: "1. “Під ключ” Підготовка повного пакету документів",
+  },
+  {
+    id: 1,
+    title: "2. Отримання всіх необхідних дозволів та ліцензій",
+  },
+  {
+    id: 2,
+    title:
+      "3. Повна “упаковка” вашого підприємства щодо можливості вашого підприємства продавати електроенергію до електромережі України",
+  },
+  {
+    id: 3,
+    title: "4. Встановлення сонячних електростанцій",
   },
 ];
 
@@ -84,33 +104,25 @@ export const howItWorkList: IWhyIsThisBeneficial[] = [
         Аналіз вашого <br /> підприємства
       </>
     ),
-    text: "визначаємо потенціал генерації та можливості продажу.",
+    text: "Визначаємо потенціал генерації та можливості продажу.",
     icon: dandruff_icon,
   },
   {
     id: 1,
-    title: (
-      <>
-        Отримання статусу <br /> &quot;Виробник електроенергії&quot;
-      </>
-    ),
-    text: "супроводжуємо процес реєстрації.",
+    title: <>Отримання дозволів для продажу електроенергії</>,
+    text: "Оформлення статусів “Активний споживач” або “Виробник”",
     icon: lightning_icon,
   },
   {
     id: 2,
-    title: (
-      <>
-        Підготовка <br /> договорів
-      </>
-    ),
-    text: "допомагаємо укласти вигідні угоди з енергопостачальниками.",
+    title: <>Укладення договору з постачальниками</>,
+    text: "Викуповуємо вашу згенеровану електроенергію",
     icon: paper_icon,
   },
   {
     id: 3,
-    title: "Підключення до ринку електроенергії",
-    text: "ваш бізнес виходить на новий рівень доходу.",
+    title: "Продаж електроенергії в мережу",
+    text: "Ваш бізнес отримує дохід з продажу електроенергії",
     icon: cup_icon,
   },
 ];
@@ -138,8 +150,8 @@ export const whatWeProvideList: IWhatWeProvideList[] = [
   },
   {
     id: 4,
-    title: "Підтримку при взаємодії з операторами ринку та державними органами",
-    icon: file_icon,
+    title: "Встановлення Сонячних станцій",
+    icon: sun_icon,
   },
 ];
 
@@ -152,8 +164,7 @@ export const ourServicesList: IOurServicesList[] = [
   },
   {
     id: 1,
-    title: "Отримання ліцензії:",
-    text: "Супровід на всіх етапах ліцензування для законного ведення бізнесу",
+    title: "Встановлення сонячних електростанцій",
     image: ourServices_img2,
   },
   {
@@ -168,7 +179,7 @@ export const ourServicesList: IOurServicesList[] = [
 export const comprehensiveSolutionsList: IComprehensiveSolutionsList[] = [
   {
     id: 0,
-    title: "Підготовка технічної документації для запуску генерації",
+    title: "Встановлення сонячних електростанцій",
     icon: paper_icon,
   },
   {
@@ -178,7 +189,8 @@ export const comprehensiveSolutionsList: IComprehensiveSolutionsList[] = [
   },
   {
     id: 2,
-    title: 'Отримання статусу "Виробник" електроенергії',
+    title:
+      'Отримання статусу "Виробник" електроенергії або “Активний споживач електроенергії”',
     icon: lightning_icon,
   },
   {
@@ -309,24 +321,16 @@ export const whatDoWeOfferList: IWhatDoWeOfferList[] = [
     id: 2,
     subtitle: (
       <>
-        <span className="font-extrabold">Допомога в укладенні договорів</span>{" "}
-        <br /> з енергопостачальниками та трейдерами.
-      </>
-    ),
-    image: plug_icon,
-  },
-  {
-    id: 3,
-    subtitle: (
-      <>
-        <span className="font-extrabold">Юридичний супровід угод</span> для
-        безпечного виходу на ринок електроенергії.
+        <span className="font-extrabold">
+          Юридичний супровід <br /> угод
+        </span>{" "}
+        для безпечного <br /> виходу на ринок <br /> електроенергії.
       </>
     ),
     image: scales_icon,
   },
   {
-    id: 4,
+    id: 3,
     subtitle: (
       <>
         <span className="font-extrabold">
@@ -339,7 +343,7 @@ export const whatDoWeOfferList: IWhatDoWeOfferList[] = [
     image: bag_icon,
   },
   {
-    id: 5,
+    id: 4,
     title: "Результат",
     subtitle:
       "Ваше підприємство отримує додатковий дохід від продажу надлишкової електроенергії, працюючи законно, безпечно та ефективно!",

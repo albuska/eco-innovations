@@ -8,6 +8,11 @@ export interface IHeaderNavList {
   ref: string;
 }
 
+export interface ILegalSupportList {
+  id: number;
+  title: string;
+}
+
 export interface IWhyIsThisBeneficial {
   id: number;
   title: string | JSX.Element;
@@ -24,7 +29,7 @@ export interface IWhatWeProvideList {
 export interface IOurServicesList {
   id: number;
   title: string;
-  text: string;
+  text?: string;
   image: StaticImageData;
   imageTablet?: StaticImageData;
 }

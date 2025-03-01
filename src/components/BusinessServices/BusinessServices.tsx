@@ -11,12 +11,12 @@ const BusinessServices = () => {
         </h2>
         <div className="sm:w-[638px] xl:w-[600px] flex flex-col xl:gap-5">
           <p className="text-[var(--white-color)] xl:text-xl xl:leading-[24px] text-base leading-[19.5px] text-center px-[16px] sm:px-[39px] lg:px-0">
-            Ваш бізнес орієнтований на генерацію електроенергії та її продаж в
-            електромережу України? <br />
+            “У вас вже є СЕС чи лише плануєте її встановити? <br /> Бажаєте
+            заробляти на продажу електроенергії? <br />
           </p>
-          <p className="text-[var(--white-color)] xl:text-xl xl:leading-[24px] text-base leading-[19.5px] text-center px-[16px] sm:px-[39px] lg:px-0">
+          <p className="text-[var(--white-color)] xl:text-xl xl:leading-[24px] text-base leading-[19.5px] text-center px-[16px] sm:px-[39px] lg:px-0 sm:mt-[15px]">
             Ми допоможемо вам вийти на ринок електроенергетики легко та без
-            труднощів!
+            труднощів!”
           </p>
         </div>
       </div>

@@ -25,10 +25,10 @@ const HowItWork = () => {
         Як це працює?
       </h2>
       <ul className="relative z-[2] flex flex-col gap-[20px] sm:flex-row sm:flex-wrap md:w-[698px] lg:w-auto sm:justify-between md:mx-auto lg:gap-0 lg:flex-nowrap mt-[40px]">
-        <li className="absolute w-[65px] h-[5px] top-[16%] right-[42%] translate-x-[-50%] hidden sm:block lg:hidden">
+        <li className="absolute w-[65px] h-[5px] top-[16%] right-[39%] translate-x-[-50%] hidden sm:block lg:hidden">
           <Image src={line_tablet} alt="Line" layout="fill" />
         </li>
-        <li className="absolute w-[65px] h-[5px] bottom-[29%] right-[42%] translate-x-[-50%] hidden sm:block lg:hidden">
+        <li className="absolute w-[65px] h-[5px] bottom-[29%] right-[39%] translate-x-[-50%] hidden sm:block lg:hidden">
           <Image src={line_tablet} alt="Line" layout="fill" />
         </li>
         {howItWorkList.map((item) => (

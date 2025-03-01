@@ -1,11 +1,11 @@
 export interface IFormData {
-  formOfOwnership: string;
+  ownership: string;
   name: string;
-  phoneNumber: string;
+  phone: string;
 }
 
 export interface IFormInputs {
-  formOfOwnership: string;
+  ownership: string;
   name: string;
-  phoneNumber: string;
+  phone: string;
 }

@@ -7,11 +7,12 @@ import {
   networksListTwo,
 } from "@/constants/globalConstants";
 import { Icon } from "../Icon";
+import qrCode from "../../../public/images/qr-code.webp";
 
 const Footer = () => {
   return (
     <footer id="contacts" className="pt-[34px] pb-[71px]">
-      <div className="flex flex-col pl-[36px] sm:pr-[36px] sm:flex-row sm:justify-between max-w-[1050px] mx-auto xl:px-0">
+      <div className="relative flex flex-col pl-[36px] sm:pr-[36px] sm:flex-row sm:justify-between max-w-[1050px] mx-auto xl:px-0 lg:gap-[20px]">
         <div className="flex flex-col gap-[11px] mb-[25px] sm:mb-0">
           <Link
             href="/"
@@ -24,12 +25,12 @@ const Footer = () => {
             ТОВ «ЕКО-СФЕРА НОВАЦІЙ» © 2024. Усі права захищені
           </p>
         </div>
-        <div className="flex flex-col gap-[20px] sm:gap-[38px] lg:flex-row lg:gap-[85px] xl:gap-[125px]">
+        <div className="flex flex-col gap-[20px] sm:gap-[38px] lg:flex-row lg:gap-[62px] xl:gap-[70px]">
           <div className="flex flex-col gap-[13px] sm:gap-[14px]">
             <h4 className="font-bold text-[var(--blue250-color)] text-sm leading-[17.07px]">
               Соціальні мережі
             </h4>
-            <ul className="flex flex-wrap gap-x-[14px] gap-y-[12px] max-w-[256px]">
+            <ul className="flex flex-wrap gap-x-[14px] gap-y-[12px] max-w-[256px] lg:flex-col lg:flex-nowrap">
               {networkList.map((item) => (
                 <li key={item.id} className="w-[121px]">
                   <Link
@@ -88,6 +89,9 @@ const Footer = () => {
                 </li>
               ))}
             </ul>
+          </div>
+          <div className="absolute bottom-[-4%] left-[55%] sm:left-[2%] w-[156px] h-[203px] lg:relative lg:shrink-0 lg:mt-[-2%]">
+            <Image src={qrCode} alt="QR code" layout="fill" />
           </div>
         </div>
       </div>

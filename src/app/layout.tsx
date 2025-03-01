@@ -3,6 +3,8 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Icons } from "@/components/Icons";
 import { Footer } from "@/components/Footer";
+import { Providers } from "@/components/Providers/Providers";
+import { PageLayout } from "@/components/PageLayout";
 
 export const metadata: Metadata = {
   title: "Eco Innovations",
@@ -17,10 +19,14 @@ export default function RootLayout({
   return (
     <html lang="uk">
       <body className="font-montserrat">
-        <Icons />
-        <Header />
-        <main>{children}</main>
-        <Footer />
+        <Providers>
+          <PageLayout>
+            <Icons />
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </PageLayout>
+        </Providers>
       </body>
     </html>
   );

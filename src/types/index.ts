@@ -1,5 +1,6 @@
 export type {
   IHeaderNavList,
+  ILegalSupportList,
   IWhyIsThisBeneficial,
   IWhatWeProvideList,
   IOurServicesList,

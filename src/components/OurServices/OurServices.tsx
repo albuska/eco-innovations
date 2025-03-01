@@ -37,9 +37,11 @@ const OurServices = () => {
               <h3 className="font-bold text-xl tracking-[0.15px] text-[var(--black-color)]">
                 {item.title}
               </h3>
-              <p className="text-xl leading-[24px] text-[var(--black-color)]">
-                {item.text}
-              </p>
+              {item.text && (
+                <p className="text-xl leading-[24px] text-[var(--black-color)]">
+                  {item.text}
+                </p>
+              )}
             </div>
           </li>
         ))}
